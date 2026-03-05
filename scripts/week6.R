@@ -42,4 +42,8 @@ ggplot(diamonds, aes(carat, price))+ geom_hex(bins = 20)+
 #Faceted Hexbin
 ggplot(diamonds, aes(carat, price))+ geom_hex() + scale_fill_viridis_c()+
   facet_wrap(~cut)+
-  
+  theme_minimal()
+#log scale hexbin
+ggplot(diamonds, aes(carat, price))+ geom_hex() + scale_fill_viridis_c()+
+  scale_y_log10()+
+  theme_minimal()
