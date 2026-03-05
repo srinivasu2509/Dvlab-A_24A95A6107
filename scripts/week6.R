@@ -14,11 +14,12 @@ plot(diamonds$carat, diamonds$price)
 plot(diamonds$carat, diamonds$price,col=rgb(0,0,1,0.1),pch=16,main = "Scatter plot: Carat vs price")
 
 #Hexbin usingbase r
-#install.packages('hexbin')
-#library(hexbin)
+install.packages('hexbin')
+library(hexbin)
 hb<-hexbin(diamonds$carat, diamonds$price,xbins =40)
 plot(hb, main = "hexbin plot")
-
+install.packages("ggplot2")
+library(ggplot2)
 #basic hexbin
 ggplot(diamonds,aes(x=carat,y=price))+
   geom_hex()
